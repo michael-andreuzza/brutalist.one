@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         black: "#0d0d0d",
         white: "#EBEFF5",
-        flamingo: "#e95027",
+        flamingo: "#",
       },
       fontFamily: {
         sans: [
