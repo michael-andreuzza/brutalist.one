@@ -4,11 +4,9 @@ const del = require("del");
 const autoprefixer = require("autoprefixer");
 const hb = require("gulp-hb");
 const tailwindcss = require("tailwindcss");
-const gulpif = require("gulp-if");
 const postcss = require("gulp-postcss");
 const beautify = require("gulp-beautify");
 const imagemin = require("gulp-imagemin");
-const webpack = require("webpack-stream");
 const cssnano = require("cssnano");
 const postcssImport = require("postcss-import");
 const postCSSMixins = require("postcss-mixins");
@@ -19,25 +17,23 @@ const posthtml = require("gulp-posthtml");
 const posthtmlInlineAssets = require("posthtml-inline-assets");
 const minifyClassnames = require("posthtml-minify-classnames");
 
-const isProduction = process.env.NODE_ENV === "prod";
-
 const paths = {
   dist: "./dist/",
   views: {
     src: "./src/**/*.html",
     layouts: "./src/layouts/",
     partials: "./src/partials/",
-    pages: "./src/*.html",
+    data: "./src/data/",
     dist: "./dist/",
-    watch: "./src/**/*.{html,hbs}",
+    watch: ["./src/**/*.{html,hbs}", "./src/data/**/*.{js,json}"],
   },
   js: {
-    src: "./src/js/app.js",
+    src: "./src/js/*.js",
     dist: "./dist/js/",
     watch: "./src/js/**/*.js",
   },
- css: {
-    src: "./src/css/*.css",
+  css: {
+     src: "./src/css/*.css",
     dist: "./dist/css/",
     watch: ["./src/css/**/*.css", "./src/**/*.{html,hbs}"],
   },
@@ -47,7 +43,7 @@ const paths = {
     watch: "./src/fonts/**/*.{woff,woff2,eot,ttf,svg}",
   },
   images: {
-    src: ["./src/images/**/*.{jpg,jpeg,png,gif,tiff,svg,webp}"],
+     src: ["./src/images/**/*.{jpg,jpeg,png,gif,tiff,svg,webp}"],
     dist: "./dist/images/",
     watch: "./src/images/**/*.{jpg,jpeg,png,gif,svg,tiff,webp}",
   },
@@ -113,16 +109,7 @@ gulp.task("postcss", function () {
 //   Task: JavaScript
 // -------------------------------------
 gulp.task("js", function () {
-  return gulp
-    .src(paths.js.src)
-    .pipe(
-      webpack({
-        config: isProduction
-          ? require("./webpack.config.build.js")
-          : require("./webpack.config.dev"),
-      })
-    )
-    .pipe(gulp.dest(paths.js.dist));
+  return gulp.src(paths.js.src).pipe(gulp.dest(paths.js.dist));
 });
 
 // -------------------------------------
@@ -150,19 +137,17 @@ gulp.task("views", function () {
   let hbStream = hb()
     .partials(paths.views.layouts + "**/*.{hbs,html}")
     .partials(paths.views.partials + "**/*.{hbs,html}")
+    .data(paths.views.data + "**/*.{js,json}")
     .helpers(hbLayouts);
 
   return gulp
     .src(paths.views.src)
     .pipe(hbStream)
     .pipe(
-      gulpif(
-        !isProduction,
-        beautify.html({
-          indent_size: 2,
-          preserve_newlines: false,
-        })
-      )
+      beautify.html({
+        indent_size: 2,
+        preserve_newlines: false,
+      })
     )
     .pipe(gulp.dest(paths.views.dist))
     .on("end", browsersync.reload);
@@ -196,7 +181,7 @@ gulp.task("mangleCSS", function () {
     script: undefined,
     image: undefined,
   };
- const filter = /^\.(flex|hidden|dark)$/;
+
   const plugins = [posthtmlInlineAssets({ transforms }), minifyClassnames()];
 
   return gulp
@@ -215,7 +200,7 @@ gulp.task("server", function (done) {
     notify: true,
     open: false,
   });
-  gulp.watch([paths.views.watch], { usePolling: true }, gulp.parallel("views"));
+  gulp.watch(paths.views.watch, { usePolling: true }, gulp.parallel("views"));
   gulp.watch(paths.css.watch, { usePolling: true }, gulp.parallel("postcss"));
   gulp.watch(paths.images.watch, { usePolling: true }, gulp.parallel("images"));
   gulp.watch(paths.js.watch, { usePolling: true }, gulp.parallel("js"));

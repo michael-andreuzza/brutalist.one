@@ -1,0 +1,98 @@
+{
+  "featured": [{
+      "name": "Studio 589",
+      "url": "https://589.studio/",
+      "thumbnail": "./images/589.png"
+    },
+    {
+      "name": "Dapp Boi",
+      "url": "https://dappboi.com/",
+      "thumbnail": "./images/dappboi.png"
+    },
+    {
+      "name": "FundationOS",
+      "url": "https://os.foundation.app/",
+      "thumbnail": "./images/fundationos.png"
+    },
+    {
+      "name": "PangramPangram",
+      "url": "https://pangrampangram.com/",
+      "thumbnail": "./images/pangrampangram.png"
+    },
+    {
+      "name": "The Future Factory",
+      "url": "https://thefuturefactory.co.uk/",
+      "thumbnail": "./images/thefuturefactory.png"
+    },
+    {
+      "name": "Scout",
+      "url": "https://www.fromscout.com/",
+      "thumbnail": "./images/scout.png"
+    },
+    {
+      "name": "Brutalist Themes",
+      "url": "https://brutalistthemes.com/",
+      "thumbnail": "./images/brutalistthemes.png"
+    },
+    {
+      "name": "Niki Lauda Agency",
+      "url": "https://nikilauda.obys.agency/",
+      "thumbnail": "./images/nikilauda.png"
+    },
+    {
+      "name": "GT Flexa",
+      "url": "https://www.gt-flexa.com/",
+      "thumbnail": "./images/gtflexa.png"
+    },
+    {
+      "name": "Porter Packaging",
+      "url": "https://porterpackaging.com/",
+      "thumbnail": "./images/porter.png"
+    },
+    {
+      "name": "Linktree",
+      "url": "https://linktr.ee/",
+      "thumbnail": "./images/linktree.png"
+    },
+    {
+      "name": "Simon",
+      "url": "https://xn--smon-vpa.com/",
+      "thumbnail": "./images/simon.png"
+    }
+    ,
+    {
+      "name": "Uno",
+      "url": "https://www.uno.app/",
+      "thumbnail": "./images/uno.png"
+    },
+    {
+      "name": "Lookbook",
+      "url": "https://lookbooks.store/",
+      "thumbnail": "./images/lookbook.png"
+    }
+    ,
+    {
+      "name": "P2P Studios",
+      "url": "https://www.p2pstudios.com/",
+      "thumbnail": "./images/p2pstudios.png"
+    }
+    ,
+    {
+      "name": "Steve Edge",
+      "url": "https://www.steve-edge.com/",
+      "thumbnail": "./images/steveedge.png"
+    }
+    ,
+    {
+      "name": "The New Exhibition",
+      "url": "https://thenewexhibition.com/",
+      "thumbnail": "./images/thenewexib.png"
+    }
+    ,
+    {
+      "name": "Alkemy Brand Experience",
+      "url": "https://bx.alkemy.com/",
+      "thumbnail": "./images/alkemy.png"
+    }
+  ]
+}
