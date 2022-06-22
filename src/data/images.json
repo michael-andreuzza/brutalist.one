@@ -10,7 +10,7 @@
       "thumbnail": "./images/dappboi.png"
     },
     {
-      "name": "FundationOS",
+      "name": "Fundation OS",
       "url": "https://os.foundation.app/",
       "thumbnail": "./images/fundationos.png"
     },
@@ -93,6 +93,24 @@
       "name": "Alkemy Brand Experience",
       "url": "https://bx.alkemy.com/",
       "thumbnail": "./images/alkemy.png"
+    }
+    ,
+    {
+      "name": "Electerious",
+      "url": "https://3wcc.electerious.com/",
+      "thumbnail": "./images/electerious.png"
+    }
+    ,
+    {
+      "name": "A Single Div",
+      "url": "https://a.singlediv.com/",
+      "thumbnail": "./images/singlediv.png"
+    }
+    ,
+    {
+      "name": "Color Selector",
+      "url": "https://www.color-selector.com/",
+      "thumbnail": "./images/colorselector.png"
     }
   ]
 }
