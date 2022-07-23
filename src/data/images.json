@@ -1,8 +1,8 @@
 {
   "featured": [{
-      "name": "Studio 589",
-      "url": "https://589.studio/",
-      "thumbnail": "./images/589.png"
+      "name": "Jamstacker Studio",
+      "url": "https://jamstacker.studio/",
+      "thumbnail": "./images/jamstacker.png"
     },
     {
       "name": "Dapp Boi",

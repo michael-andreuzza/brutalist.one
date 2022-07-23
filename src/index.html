@@ -1,2 +1,37 @@
-{{#extend "default" }}{{#content "body"}} {{>general/navigation}} {{>"landing/structure"}}
- {{/content}}{{/extend}}
+{{#extend "default" }}{{#content "body"}} {{>general/navigation}}
+{{>"landing/structure"}}
+<section class="bg-black">
+  <div class="relative">
+    <div
+      class="relative object-cover w-full overflow-hidden bg-right bg-no-repeat bg-contain sm:bg-pages"
+    >
+      <div class="w-full p-5 space-y-4 prose lg:p-10 md:pl-16 md:py-20">
+        <div>
+          <h2 class="text-xs font-light leading-none text-white/70">
+            Jamstacker
+          </h2>
+          <h3 class="text-xl font-light leading-none text-white lg:text-2xl">
+            Unlimited web design &amp; web development.
+          </h3>
+          <p
+            class="font-thin tracking-[0.072rem] leading-loose text-semibold md:mt-5 text-white/70"
+          >
+            Skip long recruiting processes and Freelancers that don't deliver.
+            Get Unlimited Design &amp; Dev Requests for a flat fee.
+          </p>
+        </div>
+        <div>
+          <p class="inline-flex justify-between w-full text-white">
+            <a
+              href="https://jamstacker.studio/"
+              class="inline-flex items-center px-6 py-3 font-light no-underline border text-white/70 hover:text-white"
+            >
+              Check it out! &nbsp; ⟶
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{/content}}{{/extend}}

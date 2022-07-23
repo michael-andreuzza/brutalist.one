@@ -10,10 +10,13 @@ module.exports = {
   content: ["./src/**/*.html"],
   theme: {
     extend: {
+      backgroundImage: {
+        pages: "url('../images/pages.png')",
+      },
       colors: {
         black: "#0d0d0d",
         white: "#EBEFF5",
-        flamingo: "#e95027",
+        flamingo: "#d85b37",
       },
       fontFamily: {
         sans: [
